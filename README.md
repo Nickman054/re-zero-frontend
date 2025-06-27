@@ -1,30 +1,70 @@
-# re-zero-frontend
-Este es el front de mi Api de re zero
+# Re:Zero API - Frontend
 
-# FrontRezero
+Este proyecto es la interfaz web del proyecto **Re:Zero API**, una aplicación Angular que consume una API basada en los personajes del anime Re:Zero kara Hajimeru Isekai Seikatsu.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+## 🌐 Demo Local
 
-## Development server
+Puedes correr el proyecto localmente con:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+npm install
+ng serve
+```
 
-## Code scaffolding
+Luego abre tu navegador en:  
+[http://localhost:4200](http://localhost:4200)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🧩 Funcionalidades
 
-## Build
+- Visualización de personajes con:
+  - Nombre
+  - Habilidad
+  - Facción
+  - Temporada
+  - Imagen
+- Filtro por temporada (Season 1, Season 2, etc.)
+- Diseño inspirado en la API de Rick and Morty
+- Adaptación temática con colores de Subaru (naranja y negro)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🔧 Tecnologías Usadas
 
-## Running unit tests
+- **Angular 14**
+- **TypeScript**
+- **HTML/CSS**
+- **API REST en Spring Boot (Backend)**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📁 Estructura del Proyecto
 
-## Running end-to-end tests
+```
+src/
+├── app/
+│   ├── pages/
+│   │   └── characters/        # Página principal con tarjetas de personajes
+│   ├── services/              # Servicio para obtener personajes desde la API
+├── assets/                    # Imágenes, estilos globales
+└── environments/              # Configuración de entornos
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🚀 Pendientes / Mejoras Futuras
 
-## Further help
+- Paginación para manejar muchos personajes
+- Mejoras de estilo visual
+- Filtros adicionales por habilidad, facción o nombre
+- Página de detalle para cada personaje
+- Modo oscuro / claro
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🔗 Repositorio del Backend
+
+Este frontend se conecta al siguiente backend:  
+[🔗 Re:Zero API (Spring Boot)](https://github.com/Nickman054/re-zero-api)
+
+---
+
+## 🤝 Contribuciones
+
+¡Sugerencias, issues y mejoras son bienvenidas!
+
+---
+
+**Autor:** [Nicolas](https://github.com/Nickman054)  
+Versión del proyecto: `v1.0`
