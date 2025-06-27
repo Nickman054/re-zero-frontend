@@ -1,0 +1,67 @@
+.header {
+  background-color: #FF7F11; /* naranja vivo */
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Fondo negro para la sección de tarjetas */
+.card-section {
+  background-color: #121212;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Estilo para las tarjetas */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.character-card {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+}
+
+.character-image {
+  width: 100%;
+  height: 250px; /* Ajusta la altura según necesites */
+  object-fit: cover; /* Este es el truco: recorta y centra */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.filter-container select {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.filter-container label {
+  font-weight: bold;
+}

@@ -1,0 +1,24 @@
+<div class="header">
+  <h1>Re:Zero API</h1>
+</div>
+
+<div class="filter-container">
+  <label for="seasonFilter">Filter:</label>
+  <select id="seasonFilter" [(ngModel)]="selectedSeason" (change)="filterBySeason()">
+    <option value="">All</option>
+    <option value="Season 1">Season 1</option>
+    <option value="Season 2">Season 2</option>
+  </select>
+</div>
+
+<div class="card-section">
+  <div class="card-grid">
+    <div class="character-card" *ngFor="let character of filteredCharacters">
+      <img [src]="character.imageUrl" alt="{{ character.name }}" class="character-image" />
+      <h3>{{ character.name }}</h3>
+      <p><strong>Ability:</strong> {{ character.ability.name }}</p>
+      <p><strong>Faction:</strong> {{ character.faction.name }}</p>
+      <p><strong>Season:</strong> {{ character.season.title }}</p>
+    </div>
+  </div>
+</div>
