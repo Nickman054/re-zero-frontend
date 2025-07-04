@@ -2,23 +2,52 @@
   <h1>Re:Zero API</h1>
 </div>
 
-<div class="filter-container">
+<div class="filter-search-container">
   <label for="seasonFilter">Filter:</label>
-  <select id="seasonFilter" [(ngModel)]="selectedSeason" (change)="filterBySeason()">
-    <option value="">All</option>
+  <select id="seasonFilter" [(ngModel)]="selectedSeason" (change)="applyFilters()">
+    <option value="All">All</option>
     <option value="Season 1">Season 1</option>
     <option value="Season 2">Season 2</option>
+    <!-- agrega más temporadas si las tienes -->
   </select>
+
+  <label for="searchInput">Search:</label>
+  <input
+    id="searchInput"
+    type="text"
+    placeholder="Type a name..."
+    [(ngModel)]="searchName"
+    (input)="applyFilters()"
+  />
+  
+  <div class="pagination-controls">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
 </div>
+</div>
+
+
+
 
 <div class="card-section">
   <div class="card-grid">
     <div class="character-card" *ngFor="let character of filteredCharacters">
-      <img [src]="character.imageUrl" alt="{{ character.name }}" class="character-image" />
-      <h3>{{ character.name }}</h3>
-      <p><strong>Ability:</strong> {{ character.ability.name }}</p>
-      <p><strong>Faction:</strong> {{ character.faction.name }}</p>
-      <p><strong>Season:</strong> {{ character.season.title }}</p>
+      <ng-container *ngFor="let season of character.seasons">
+        <div *ngIf="season.seasonTitle === selectedSeason">
+          <img [src]="season.imageUrl" alt="{{ character.name }}" class="character-image" />
+          <h3>{{ character.name }}</h3>
+          <p><strong>Ability:</strong> {{ season.ability.name }}</p>
+          <p><strong>Faction:</strong> {{ season.faction.name }}</p>
+          <p><strong>Season:</strong> {{ season.seasonTitle }}</p>
+        </div>
+      </ng-container>
     </div>
   </div>
+</div>
+
+<div class="pagination-controls">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
 </div>

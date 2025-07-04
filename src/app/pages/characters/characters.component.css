@@ -42,26 +42,47 @@
   border-radius: 8px;
   margin-bottom: 1rem;
 }
-.filter-container {
+.filter-search-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  background-color: #1e1e1e;
+  padding: 1rem;
   gap: 1rem;
-  padding: 10px 20px;
-  background-color: #222;
-  color: white;
-  margin-bottom: 20px;
-  border-radius: 0;
+  flex-wrap: wrap;
 }
 
-.filter-container select {
-  background-color: #111;
+.filter-search-container label {
+  color: white;
+  font-weight: bold;
+}
+
+.filter-search-container select,
+.filter-search-container input {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #333;
+  color: white;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.pagination-controls button {
+  padding: 8px 16px;
+  background-color: #ff7f00;
   color: white;
   border: none;
-  padding: 5px 10px;
-  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.filter-container label {
-  font-weight: bold;
+.pagination-controls button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
 }
